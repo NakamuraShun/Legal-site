@@ -13,37 +13,28 @@ _link.scss
 .lnk-txt--megaNav,
 .lnk-txt--footer {
     display: inline-block;
+    margin-top: 50px;
     color: inherit;
     -webkit-transition: all .2s;
     transition: all .2s;
-    
-    & > a {
-        display: block;
-        color: inherit;
-    }
+    text-transform: capitalize;
     
     &::after{
         content: "";
         display:block;
         top:0;
         left:0;
-        width: 100%;
-        height: 3px;
-        background-color: $color-t1;
-        border-radius: 5px;
-        @include transform-scX(0);
+        width: 100px;
+        height: 1px;
+        margin-top: 5px;
+        background-color: currentColor;
         @include transition(.15s);
     }
     
-    &:hover::after{
-        @include transform-scX(1);
+    &:hover{
+        color: #fff !important;
+        background-color:$color-t1;
     }
-    
-    & [class*="ti-"] {
-        margin-left: 5px;
-        color: $color-t1;
-        font-size: 1.1rem;
-    }  
 }
 
 /* Nav */
@@ -79,8 +70,7 @@ _link.scss
 -------------------------------------------------- */
 .wrap-btn {
     @include fxrow-jc;
-    width: 100%;
-    margin-top: 30px;
+    max-width: 300px;
 }
 
 @media (min-width: $bp-sm) {
@@ -94,35 +84,58 @@ _link.scss
 
 .btnPrim--header,
 .btnPrim--headerSP,
-.btnPrim--white,
-.btnPrim--thema,
-.btnPrim--plan-red,
-.btnPrim--plan-grey,
-.btnPrim--contact {
+.btnPrim--white {
     @include infxrow-ac-jc;
     -webkit-user-select: none;
     position: relative;
-    min-width: 270px;
-    height: 55px;
-    border-radius: 15px;
-    border-bottom: solid 4px;
+    min-width: 100%;
+    height: 60px;
     color: currentColor;
-    font-size: 1.8rem;
-    font-weight: 500;
+    font-size: 1.6rem;
     letter-spacing: .1rem;
+    text-transform: capitalize;
     -webkit-transform: perspective(1px) translateZ(0);
     transform: perspective(1px) translateZ(0);
     @include transition(.1s);
+}
+
+/* white */
+.btnPrim--white {
+    color: #fff !important;
+    border: 1px solid $color-t3;
+    margin-bottom: 10px;
+    
+    span::before{
+        content: "";
+        position: absolute;
+        top: 50%;
+        bottom: 0;
+        right: 15px;
+        transform: translateY(-50%);
+        width: 14px;
+        height: 14px;
+        clip-path: polygon(75% 0%, 100% 50%, 75% 100%, 28% 100%, 51% 50%, 28% 0);
+        background-color: $color-t3;
+    }
     
     &:hover{
-        opacity: .8;
-        @include transform-trY(1px);
+        color: $color-t1 !important;
+        border: 1px solid $color-t1;
+        background-color: #fff;
     }
     
-    &:active{
-        border-bottom: none;
+    &:hover{
+        span::before{
+            background-color: $color-t1;
+        }
     }
+    
 }
+
+@media (min-width: $bp-md){
+    
+}
+
 
 /* header */
 .btnPrim--header {
@@ -152,62 +165,5 @@ _link.scss
 @media (min-width: $bp-md){
     .btnPrim--headerSP {
         display: none;
-    }
-}
-
-/* white */
-.btnPrim--white {
-    color: $color-t1 !important;
-    background-color: #fff;
-    border: 4px solid $color-t1;
-    
-    &:hover{
-        color: #fff !important;
-        background-color: $color-t1;
-    }
-}
-
-@media (min-width: $bp-md){
-    .btnPrim--white {
-        color: $color-t1 !important;
-        background-color: #fff;
-        border: 4px solid $color-t1;
-        margin-bottom: 10px;
-    }
-}
-
-/* thema */
-.btnPrim--thema {
-    background-color: $color-t1;
-    border-color: #65010d;
-    color: #fff !important;
-}
-
-/* contact */
-.btnPrim--contact {
-    width: 100%;
-    height: 70px; 
-    font-size: 2.8rem;
-    color: $color-b1 !important;
-    background-color: $color-s1;
-    border-color: #d39906;
-}
-
-/* plan */
-.btnPrim--plan { 
-    &-red{
-        width: 100%;
-        height: 40px;
-        color: #fff !important;
-        background-color: $color-t1;
-        border-color: #65010d;
-    }
-    
-    &-grey{
-        width: 100%;
-        height: 40px;
-        color: #fff !important;
-        background-color: #404040;
-        border-color: #111;
     }
 }

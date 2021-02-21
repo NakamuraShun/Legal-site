@@ -197,6 +197,13 @@ FLEX
     @include --fxjty-between;
 }
 
+@mixin fxrow-ae-je{
+    @include --fx;
+    @include --fxdir-row;
+    @include --fxain-end;
+    @include --fxjty-end;
+}
+
 
 /* fxrow-j*-** */
 @mixin fxrow-js{

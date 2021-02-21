@@ -10,9 +10,10 @@ $color-b1 : #333;
 $color-g0 : #c4c4c4;
 $color-g1 : #f4f4f4;
 $color-g2 : #e9e9e9;
-$color-g3 : #c8c8c8;  //最後に消す
 /* thema */
-$color-t1 : #b40015;
+$color-t1 : #221739;
+$color-t2 : #383a4e;
+$color-t3 : #f6f6f7;
 /* sub */
 $color-s1 : #f9b301;
 
@@ -35,17 +36,17 @@ html{
 -------------------------------------------------- */
 body {
     background-color: #fff;
-    color: $color-b1;
+    color: $color-t2;
     font-weight: 400;
     font-size: 1.4rem;
     line-height: 1.75;
     width: 100%;
-    font-family: "Noto Sans JP", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "游ゴシック", YuGothic, "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+    font-family: "Noto serif JP", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "游ゴシック", YuGothic, "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
 }
 
 @media (min-width: $bp-sm) {  
     body {
-        font-size: 1.5rem;
+        font-size: 1.4rem;
     }
 }
 
@@ -79,19 +80,16 @@ a {
 
 a:link {
     text-decoration: none;
-    color:$color-b1;
 }
 
 a:visited {
     text-decoration: none;
-    color:$color-b1;
 }
 
 
 a:hover, a:active {
     outline-width: 0;
     text-decoration: none;
-    color:$color-b1;
 }
 
 a:focus {

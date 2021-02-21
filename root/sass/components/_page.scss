@@ -567,9 +567,10 @@ _page.scss
 /*  news
 -------------------------------------------------- */
 .newsContainer{
+    max-width: 800px;
     height: 200px;
+    margin: 0 auto;
     overflow-y: scroll; 
-    font-size: 1.2rem;
 }
 
 .news{
@@ -583,22 +584,12 @@ _page.scss
         display: inline-block;
         margin-right: 10px;
         padding: 5px 0;
-        font-weight: 500;
-        color: $color-g0;
-        
+        font-weight: 500;        
     }
     
-    &__tag--news {
-        margin-right: 10px;
-        padding: 5px 0;
-        
-        span {
-            padding: 0 3px;
-            border-radius: 5px;
-            font-size: .8em;
-            font-weight: 400;
-            color: #fff;
-            background-color: $color-b1;
+    &__txt{
+        & > a{
+            color: $color-t2 !important;
         }
     }
 }
@@ -606,25 +597,20 @@ _page.scss
 
 @media (min-width: $bp-md) {
     .newsContainer{
-        height: 240px;
+        height: 170px;
         overflow-y: scroll; 
         font-size: 1.5rem;
     }
     .news{
         &__content {
-            margin-bottom: 7px;
+            margin-bottom: 5px;
         }
         
         &__date {
             margin-right: 20px;
         }
         
-        &__tag--news {
-            margin-right: 30px;
-        }
-        
         &__txt {
-            width: calc(100% - 20em);
             padding: 5px 0;
             
             &:hover{
