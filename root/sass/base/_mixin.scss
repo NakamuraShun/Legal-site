@@ -1,0 +1,369 @@
+/*
+_mixin.scss
+*******************************************************************************************************************/
+
+/*======================================================================
+FLEX
+======================================================================*/
+/*  display:
+-------------------------------------------------- */
+/* flex */
+@mixin --fx{
+    display: -webkit-box;
+    display: -webkit-flex; //Android2.3~
+    display: -ms-flexbox; //IE9~
+    display: flex;
+}
+
+/* inline-flex */
+@mixin --infx{
+    display: -webkit-box;
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+}
+
+/*  flex-wrap:
+-------------------------------------------------- */
+/* wrap */
+@mixin --fxwrap{
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+
+/*  flex-direction:
+-------------------------------------------------- */
+/* row */
+@mixin --fxdir-row{
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+}
+/* column */
+@mixin --fxdir-col{
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+}
+/* row-reverse */
+@mixin --fxdir-row--rev{
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+    -webkit-flex-direction: row-reverse;
+    -ms-flex-direction: row-reverse;
+    flex-direction: row-reverse;
+}
+/* column-reverse */
+@mixin --fxdir-col--rev{
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+    -webkit-flex-direction: column-reverse;
+    -ms-flex-direction: column-reverse;
+    flex-direction: column-reverse;
+}
+
+/*  align-items:
+-------------------------------------------------- */
+/* flex-start */
+@mixin --fxain-start{
+    -webkit-box-align: start;
+    -webkit-align-items: flex-start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+}
+/* flex-end */
+@mixin --fxain-end{
+    -webkit-box-align: end;
+    -webkit-align-items: flex-end;
+    -ms-flex-align: end;
+    align-items: flex-end;
+}
+/* center */
+@mixin --fxain-center{
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+/*  justify-content:
+-------------------------------------------------- */
+/* flex-start */
+@mixin --fxjty-start{
+    -webkit-box-pack: start;
+    -webkit-justify-content: flex-start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+}
+/* flex-end */
+@mixin --fxjty-end{
+    -webkit-box-pack: end;
+    -webkit-justify-content: flex-end;
+    -ms-flex-pack: end;
+    justify-content: flex-end;
+}
+/* center */
+@mixin --fxjty-center{
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+/* space-between */
+@mixin --fxjty-between{
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+}
+/* space-around */
+@mixin --fxjty-around{
+    -webkit-justify-content: space-around;
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
+}
+
+/* -----------------------------------------------
+/* [Practicality Rule set]
+-------------------------------------------------- */
+
+/*  fxrow-**
+-------------------------------------------------- */
+
+/* fxrow-** */
+@mixin fxrow{
+    @include --fx;
+    @include --fxdir-row;
+}
+@mixin fxrow-jsb{
+    @include --fx;
+    @include --fxdir-row;
+    @include --fxjty-between;
+}
+
+/* fxrow-a*-** */
+@mixin fxrow-ac-jc{
+    @include --fx;
+    @include --fxdir-row;
+    @include --fxain-center;
+    @include --fxjty-center;
+}
+@mixin fxrow-ac-js{
+    @include --fx;
+    @include --fxdir-row;
+    @include --fxain-center;
+    @include --fxjty-start;
+}
+@mixin fxrow-ac-je{
+    @include --fx;
+    @include --fxdir-row;
+    @include --fxain-center;
+    @include --fxjty-end;
+}
+@mixin fxrow-ac-jsb{
+    @include --fx;
+    @include --fxdir-row;
+    @include --fxain-center;
+    @include --fxjty-between;
+}
+
+@mixin infxrow-ac-jc{
+    @include --infx;
+    @include --fxdir-row;
+    @include --fxain-center;
+    @include --fxjty-center;
+}
+@mixin fxrow-ac{
+    @include --fx;
+    @include --fxdir-row;
+    @include --fxain-center;
+}
+@mixin fxroww-ac{
+    @include --fx;
+    @include --fxdir-row;
+    @include --fxwrap;
+    @include --fxain-center;
+}
+
+@mixin fxrow-as-jsb{
+    @include --fx;
+    @include --fxdir-row;
+    @include --fxain-start;
+    @include --fxjty-between;
+}
+
+
+/* fxrow-j*-** */
+@mixin fxrow-js{
+    @include --fx;
+    @include --fxdir-row;
+    @include --fxjty-start;
+}
+@mixin fxrow-je{
+    @include --fx;
+    @include --fxdir-row;
+    @include --fxjty-end;
+}
+@mixin fxrow-jc{
+    @include --fx;
+    @include --fxdir-row;
+    @include --fxjty-center;
+}
+
+
+
+/*  fxcol-**
+-------------------------------------------------- */
+
+/* fxcol-** */
+@mixin fxcol{
+    @include --fx;
+    @include --fxdir-col;
+}
+@mixin fxcol-jsb{
+    @include --fx;
+    @include --fxdir-col;
+    @include --fxjty-between;
+}
+@mixin fxcol-jc{
+    @include --fx;
+    @include --fxdir-col;
+    @include --fxjty-center;
+}
+@mixin fxcol-ac-jc{
+    @include --fx;
+    @include --fxdir-col;
+    @include --fxain-center;
+    @include --fxjty-center;
+}
+@mixin fxcol-as{
+    @include --fx;
+    @include --fxdir-col;
+    @include --fxain-start;
+}
+
+
+/* fxcol-a*-** */
+@mixin fxcol-ac-js{
+    @include --fx;
+    @include --fxdir-col;
+    @include --fxain-center;
+    @include --fxjty-start;
+}
+@mixin fxcol-ac-je{
+    @include --fx;
+    @include --fxdir-col;
+    @include --fxain-center;
+    @include --fxjty-end;
+}
+@mixin fxcol-ac-jsb{
+    @include --fx;
+    @include --fxdir-col;
+    @include --fxain-center;
+    @include --fxjty-between;
+}
+
+@mixin fxcol-as-jsb{
+    @include --fx;
+    @include --fxdir-col;
+    @include --fxain-start;
+    @include --fxjty-between;
+}
+@mixin fxcol-ae-jsb{
+    @include --fx;
+    @include --fxdir-col;
+    @include --fxain-end;
+    @include --fxjty-between;
+}
+
+
+
+
+
+/*======================================================================
+POSITION
+======================================================================*/
+/* -----------------------------------------------
+/* [Practicality Rule set]
+-------------------------------------------------- */
+/* center */
+@mixin po--ac{
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+}
+
+/*======================================================================
+BACK-GROUND
+======================================================================*/
+/* -----------------------------------------------
+/* [Practicality Rule set]
+-------------------------------------------------- */
+/* cover */
+@mixin bg--cv{
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-color: #111;
+}
+
+/* background-image */
+@mixin bgimg--cv($imagePath){
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-color: #111;
+    background-image: url($imagePath);
+}
+
+/*======================================================================
+TRANSITION
+======================================================================*/
+/* -----------------------------------------------
+/* [Practicality Rule set]
+-------------------------------------------------- */
+/* transition */
+@mixin transition($count){
+    -webkit-transition: all $count;
+    transition: all $count;
+}
+
+/* transform */
+@mixin transform-sc($num){
+    -webkit-transform: scale($num); 
+    -ms-transform: scale($num);
+    transform: scale($num);
+}
+@mixin transform-scX($num){
+    -webkit-transform: scaleX($num); 
+    -ms-transform: scaleX($num);
+    transform: scaleX($num);
+}
+
+@mixin transform-trX($px){
+    -webkit-transform: translateX($px); 
+    -ms-transform: translateX($px);
+    transform: translateX($px);
+}
+@mixin transform-trY($px){
+    -webkit-transform: translateY($px); 
+    -ms-transform: translateY($px);
+    transform: translateY($px);
+}
+@mixin transform-trX($px){
+    -webkit-transform: translateX($px); 
+    -ms-transform: translateX($px);
+    transform: translateX($px);
+}
+
+@mixin transform-ro($deg){
+    -webkit-transform: rotate($deg); 
+    -ms-transform: rotate($deg);
+    transform: rotate($deg);
+}

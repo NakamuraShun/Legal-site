@@ -1,0 +1,615 @@
+/*
+_header.scss
+*******************************************************************************************************************/
+
+/* l-header
+-------------------------------------------------- */
+.l-header{
+    z-index: 200;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 60px;
+    background-color: #fff;
+    -webkit-box-shadow: 0 0 15px rgba(0,0,0,0.50);
+    box-shadow: 0 0 15px rgba(0,0,0,0.50);
+    
+    .header__content{
+        height: 100%;
+        margin: 0 auto;
+        padding-right: 15px;
+        padding-left: 15px;
+    }
+}
+
+@media (min-width: $bp-md){
+    .l-header{
+        height: 130px;
+    }
+}
+
+/* logo
+-------------------------------------------------- */
+.logo {
+    z-index: 200;
+    position: absolute;
+    top: 30px;
+    left: 5px;
+    width: 100px;
+    height: 100%;
+    @include fxrow-ac;
+    
+    &__img{
+        height: 20px;
+        width: auto;
+        @include fxrow-ac;
+    }
+}
+
+@media (min-width: $bp-md){
+    .logo {
+        top: -30px;
+        left: 30px;
+        
+        &__img{
+            height: 25px;
+        }
+    }
+}
+
+/* hamburger
+-------------------------------------------------- */
+.hamburger{
+    z-index: 200;
+    cursor: pointer;
+    overflow: hidden;
+    position: absolute;
+    top: 8px;
+    right: 5px;
+    width: 50px;
+    height: 45px;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 2.4rem;
+    text-decoration: none;
+    border: 2px solid $color-t1;
+    border-radius: 5px;
+    @include fxrow-ac-jc;
+    @include transition(0.3s);
+}
+
+.mark{
+    margin-top: 3px;
+}
+
+.markMenu{
+    width: 100%;
+    height: 20px;
+    position: relative;
+    
+    &__middle,
+    &__top,
+    &__bottom {
+        display: inline-block;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-left: -12px;
+        width: 24px;
+        height: 3px;
+        border-radius: 10px;
+        background-color: $color-t1;
+        -webkit-transition-duration: .1s;
+        transition-duration: .1s;
+    }
+}
+
+.markMenu__top{margin-top: -9px;}
+.markMenu__middle{margin-top: -2px;}
+.markMenu__bottom{margin-top: 5px;}
+
+.mark.is-active {
+    .markMenu__top {
+        -webkit-transform: rotate(45deg) translate(5px, 5px);
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+    .markMenu__middle {
+        -webkit-transition: opacity .25s;
+        transition: opacity .25s;
+        opacity: 0;
+    }
+    .markMenu__bottom {
+        -webkit-transform: rotate(-45deg) translate(5px, -5px);
+        transform: rotate(-45deg) translate(5px, -5px);
+    }
+}
+
+@media (min-width: $bp-md){
+    .hamburger{display: none;}
+}
+
+
+/* globalNav
+-------------------------------------------------- */
+.globalNav{
+    width: 100%;
+}
+
+.l-nav {
+    visibility: hidden;
+    position: fixed;
+    top: 60px; // sp:l-headerのheight分下降
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+}
+
+body.is-fix .l-nav {
+    visibility: visible;
+}
+
+@media (min-width: $bp-md){
+    .l-nav {
+        position: static;
+    }
+}
+
+/* globalNavSP
+-------------------------------------------------- */
+.globalNavSP{
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    @include fxrow-je;
+    
+    &__content{
+        opacity: 0;
+        visibility: hidden;
+        z-index: 100;
+        min-width: 300px;
+        -webkit-perspective: 500px;
+        perspective: 500px;
+        -webkit-transform: translateX(100px);
+        transform: translateX(100px);
+        -webkit-transform-origin: right;
+        transform-origin: right;
+        -webkit-transition-duration: .4s;
+        transition-duration: .4s;
+        -webkit-transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+        transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+    }
+    
+    &__bg {
+        z-index: 90;
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        opacity: 0;
+        background-color: rgba(0, 0, 0, 0.5);
+        -webkit-transition-duration: .4s;
+        transition-duration: .4s;
+    }
+}
+
+body.is-fix {
+    & .globalNavSP__content {
+        opacity: 1;
+        visibility: visible;
+        -webkit-overflow-scrolling: touch;
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+    }
+    
+    & .globalNavSP__bg {
+        opacity: 1;
+        cursor: pointer;
+    }
+}
+
+@media (min-width: $bp-md){ 
+    .globalNavSP {
+        &__bg{
+            opacity: 0;
+            display: none;
+        }
+    }
+    
+    body.is-fix 
+    .globalNavSP__bg {
+        opacity: 0;
+        display: none;    
+    }
+}
+
+
+.gNavSP {
+    width: 100%;
+    height: 100%;
+    background-color: #fff;    
+}
+
+.gNavSpMain{
+    &__itm {
+        position: relative;
+        border-top: 1px solid #e5e6e6;
+        &:last-child{border-bottom: 1px solid #e5e6e6;}
+    }
+    
+    &__lnk
+    {
+        @include fxrow-ac;
+        height: 45px;
+        padding-left: 15px;
+        color: $color-b1 !important;
+        font-size: 1.5rem;
+        font-weight: 400;
+        letter-spacing: 1px;
+    }
+    
+    &__lnk--toggle::before {
+        @include fxrow-ac-jc;
+        position: absolute;
+        top: 0;
+        right: 0;
+        content: "\e61a";
+        color: $color-t1;
+        font-family: 'themify';
+        font-size: 1.1rem;
+        height: 45px;
+        width: 45px;
+        background-color: #dadada;
+    }
+    
+    &__lnk--toggle.is-active::before {
+        content: "\e622";
+        background: #eee;
+    }
+    
+    .slideMenu {
+        display: none;
+    }
+    
+    .toggleNav {
+        background-color: #f5f5f5;
+        
+        &__itm {
+            border-top: 1px dashed #bdbdbd;
+        }
+        
+        &__lnk{
+            @include fxrow-ac;
+            font-size: 1.2rem;
+            height: 45px;
+            padding-left: 15px;
+        }
+    }
+}
+
+@media (min-width: $bp-md){
+    .gNavSP {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+
+.gNavSpSubInfo{
+    @include fxrow-ac;
+    @include --fxwrap;
+    padding: 20px 15px;
+    
+    &__itm{
+        width: 50%;
+        margin-bottom: 10px;
+    }
+    
+    &__lnk{
+        font-size: 1.2rem;
+        
+        span {
+            color: $color-t1;
+        }
+    }
+}
+
+
+/* globalNavPC
+-------------------------------------------------- */
+.globalNavPC{
+    opacity: 0;
+    visibility: hidden;
+}
+
+@media (min-width: $bp-md){
+    
+    .globalNavPC {
+        opacity: 1;
+        visibility: visible;
+        height: 100%;
+    }
+    
+    .gNavPcSub{
+        height: 65px;
+        @include fxrow-ac-je;
+        
+        .gNavPcSubInfo{
+            width: 300px;
+            height: 30px;
+            margin-left: 25px;
+            padding: 0 10px;
+            background-color: $color-g1;
+            border: 1px solid $color-g2;
+            border-radius: 5px;
+            @include fxrow-ac-jsb;
+            
+            &__itm {
+                @include fxrow-ac-jc;
+            }
+            
+            &__lnk{
+                font-size: 1.2rem;     
+                & i{ padding-right: 5px; }
+                &:hover{ border-bottom: 1px solid $color-b1; }
+            }
+        }
+        
+        &--scroll{
+            display: none;
+        }
+    }
+    
+    .gNavPcMain{
+        position: relative;
+        height: 65px;
+        @include fxrow-ac-jsb;
+        
+        &__itm {
+            height: 65px;
+            @include fxrow-ac-jc;
+        }
+        
+        &__lnk{
+            display: block;
+            font-size: 1.8rem;
+            font-weight: 500;
+            
+            span{
+                padding-left: 6px;
+                font-size: 1.2rem;
+                font-weight: 900;
+                color: $color-b1;
+            }
+            
+            &::after{
+                content: "";
+                display:block;
+                top:0;
+                left:0;
+                width: 100%;
+                height: 3px;
+                background-color: $color-t1;
+                border-radius: 5px;
+                @include transform-scX(0);
+                @include transition(.15s);
+            }
+            
+            &:hover::after{
+                @include transform-scX(1);
+            }
+            
+            &:hover span{
+                color: $color-t1;
+            }
+        }
+    }
+    
+}
+
+.megaMenu{
+    display: none;
+    position: absolute; // from .gNavPcMain
+    top:100%;
+    left:0;
+    width: 100%;
+    
+    .megaMenuWrap{
+        padding-top: 30px !important;
+        padding-bottom: 30px !important;
+        color: #fff !important;
+        background-color: rgba(0, 0, 0, .9);
+    }
+    
+    .l-container{
+        max-width: 900px;
+    }
+}
+
+.MegaNav{
+    &__topBtn{
+        a{
+            display: inline-block;
+            padding: 5px 10px;
+            font-size: 1.8rem;
+            font-weight: 500;
+            border: 2px solid #fff;
+            border-radius: 5px;
+            color: #fff;
+            @include transition(.15s);
+            
+            &:hover{
+                background-color: #fff;
+                color: $color-t1;
+            }
+        }
+        
+        span{
+            margin-left: 10px;
+            color:$color-t1;
+        }
+    }
+    
+    &__searchBox{
+        margin-top: 30px;
+        width: 100%;
+        a{color: #fff};
+        
+        table:not(:last-child){
+            margin-bottom: 30px;
+        }
+        
+        thead{
+            border-bottom: 1px solid #fff;
+        }
+        
+        tbody{
+            margin-top: 10px;
+        }
+        
+        th{
+            padding-bottom: 10px;
+        }
+        
+        td{
+            display: inline-block;
+            padding-top: 10px;
+            padding-right: 20px;
+        }
+    }
+}
+
+
+/* searchBox
+-------------------------------------------------- */
+.searchBox{
+    @include fxrow-ac-jc;
+    
+    &__searchInput{
+        width: 180px;
+        height: 30px;
+        border-radius: 5px;
+        background-color: $color-g1;
+        border-radius: 5px 0px 0px 5px;
+        border-color: $color-g2;
+        border-width: 2px;
+    }
+    
+    &__searchSubmit{
+        cursor: pointer;
+        width: 50px;
+        height: 30px;
+        margin-left: -5px;
+        border: none;
+        color: #fff;
+        background-color: $color-t1;
+        border-radius: 0px 5px 5px 0px;
+    }
+}
+
+@media (min-width: $bp-md){
+    .searchBox{
+        &__searchSubmit{
+            width: 30px;
+        }
+    }
+}
+
+/* #l-MV
+-------------------------------------------------- */
+.h-mvWrap{
+    padding-top: 110px !important; //l-headerの高さに応じて変更
+    padding-bottom: 50px !important; //l-headerの高さに応じて変更
+    @include bgimg--cv("../images/mv.jpg");
+}
+
+.mvBody{
+    height: 300px;
+    padding: 15px;
+    border-radius: 10px;
+    background-color:rgba(255, 255, 255, 0.85);
+    
+    .row{
+        height: 100%;
+    }
+    
+    [class*=col-] {
+        height: 100%;
+    }
+    
+    .mvContent{
+        height: 100%;
+        @include fxcol-ac-jsb;
+        
+        &__copyMain{
+            text-align: center;
+            font-size: 3rem;
+            font-weight: 600;
+            line-height: 1.3;
+        }
+        
+        &__copySub{
+            font-size: 1.4rem;
+        }
+    }
+    
+    .mvPhoto{
+        display: none;
+    }
+}
+
+@media (min-width: $bp-md){
+    .h-mvWrap{
+        padding-top: 130px !important;
+        padding-bottom: 0px !important;
+        background: none;
+    }
+    
+    .mvBody{
+        height: 360px;
+        
+        .mvContent{
+            @include fxcol-as-jsb;
+            
+            &__copyMain{
+                text-align: left;
+                margin-top: 20px;
+                font-size: 4rem;
+                font-weight: 600;
+                letter-spacing: 3px;
+                line-height: 1.3;
+            }
+            
+            &__copySub{
+                font-size: 1.6rem;
+            }
+        }
+        
+        .mvPhoto{
+            overflow: hidden;
+            width: 100%;
+            height: 100%;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+            opacity: .9;
+            @include fxrow-ac-jc;
+            
+            &__img{
+                @include bgimg--cv("../images/mv.jpg");
+                height: 100%;
+                width: 100%;
+            }
+        }
+        
+        .wrap-btn{
+            margin-top: 0;
+            justify-content: flex-start;
+        }
+    }
+}
