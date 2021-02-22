@@ -16,10 +16,11 @@ _footer.scss
 /* gototop
 -------------------------------------------------- */
 .pagetop{
-    @include fxrow-je;
+    width: 100%;
     
     &__lnk {
         display: inline-block;
+
         width: 100px;
         height: 50px;
         @include transition(.3s);

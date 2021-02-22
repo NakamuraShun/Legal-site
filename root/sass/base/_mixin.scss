@@ -274,6 +274,18 @@ FLEX
     @include --fxain-center;
     @include --fxjty-end;
 }
+@mixin fxcol-as-jc{
+    @include --fx;
+    @include --fxdir-col;
+    @include --fxain-start;
+    @include --fxjty-center;
+}
+@mixin fxcol-ae-jc{
+    @include --fx;
+    @include --fxdir-col;
+    @include --fxain-end;
+    @include --fxjty-center;
+}
 @mixin fxcol-ac-jsb{
     @include --fx;
     @include --fxdir-col;

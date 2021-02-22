@@ -41,27 +41,29 @@ _layout.scss
 /* -----------------------------------------------
 /* topPage     [h-***]
 -------------------------------------------------- */
-/* #h-QUISTION
+/* .body-**
 -------------------------------------------------- */
-#h-QUISTION .quistionWrap{
-    position: relative;
-    padding: 35px 0 !important;
-    color: #fff;
-    background-color: #b40015;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%23922222' fill-opacity='0.75' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");
+.body-side{
+    display: none;
+}
+
+@media (min-width: $bp-md){
+    .body-wrap{
+        @include fxrow;
+    }
     
-    &::after{
-        content: "";
-        position: absolute;
-        bottom:-15px;
-        left:50%;
-        margin-left: -15px;
-        width: 30px;
-        height: 30px;
-        background-color: #b40015;
-        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%23922222' fill-opacity='0.75' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");
-        @include transform-ro(45deg);
-        
+    .body-side{
+        z-index: 200;
+        display: block;
+        position: relative;
+        width: 200px;
+        margin-right: 1px;
+        color: #fff;
+        background-color: $color-t1;
+    }
+    
+    .body-content{
+        flex: 1;
     }
 }
 
@@ -102,5 +104,24 @@ _layout.scss
 #h-ACCESS .h-accessWrap{
     
     .ttl-lvl2::after{content: "アクセス"}
+}
+
+/* bg-wrap
+-------------------------------------------------- */
+.bgLine{
+    position: relative;
+    
+    &::after{
+    }
+}
+
+@media (min-width: $bp-sm){
+    .bgLine{
+        position: relative;
+
+        &::after{
+           
+        }
+    }
 }
 
