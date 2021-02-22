@@ -41,15 +41,14 @@ _typography.scss
 /* ttl-lvl2
 -------------------------------------------------- */
 .ttl-lvl2 {
-    padding-top: 10;
-    padding-bottom: 20px;
     text-align: center;
     position: relative;
+    margin-bottom: 50px;
     
     &::after{
         content: "";
         position: absolute;
-        bottom: 5px;
+        bottom: -25px;
         left: 50%;
         transform: translateX(-50%);
     }
@@ -63,8 +62,11 @@ _typography.scss
 
 @media (min-width: $bp-md) {
     .ttl-lvl2 {
-        padding-top: 10px;
-        padding-bottom: 30px;
+        margin-bottom: 70px;
+        
+        &::after{
+            bottom: -30px;
+        }
     }
 }
 

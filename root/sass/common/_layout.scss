@@ -97,25 +97,10 @@ _layout.scss
     .ttl-lvl2::after{content: "ニュース"}
 }
 
-/* #h-SEMINAR
+/* #h-ACCESS
 -------------------------------------------------- */
-#h-SEMINAR {@include bgimg--cv("../../images/seminar--bg.jpg");}
-
-#h-SEMINAR .h-seminarWrap{
-    color: #fff;
-    background-color: rgba(180, 48, 48, 0.692);
-    height: inherit;
-}
-
-/* #h-PURPOSE
--------------------------------------------------- */
-#h-PURPOSE .h-purposeWrap{
-    background-color: $color-g2;
-}
-
-/* #h-METHOD
--------------------------------------------------- */
-#h-METHOD .h-methodWrap{
-    background-color: $color-g2;
+#h-ACCESS .h-accessWrap{
+    
+    .ttl-lvl2::after{content: "アクセス"}
 }
 

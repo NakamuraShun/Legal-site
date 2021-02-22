@@ -190,6 +190,12 @@ FLEX
     @include --fxain-center;
 }
 
+@mixin fxrow-as-js{
+    @include --fx;
+    @include --fxdir-row;
+    @include --fxain-start;
+    @include --fxjty-start;
+}
 @mixin fxrow-as-jsb{
     @include --fx;
     @include --fxdir-row;
