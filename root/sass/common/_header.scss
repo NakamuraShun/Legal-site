@@ -424,7 +424,7 @@ body.is-fix {
 .h-mvWrap{
     padding-top: 50px !important; //l-headerの高さに応じて変更
     padding-bottom:0 !important; //l-headerの高さに応じて変更
-    @include bgimg--cv("../images/mv--01.jpg");
+    @include bgimg--cv("../images/mv--sp.jpg");
     filter: grayscale(50%);
 }
 
@@ -466,6 +466,9 @@ body.is-fix {
 }
 
 @media (min-width: $bp-md){
+    .h-mvWrap{
+        @include bgimg--cv("../images/mv--pc.jpg");
+    }
     
     .mvBody{
         height: 500px;

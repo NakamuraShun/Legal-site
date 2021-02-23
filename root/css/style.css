@@ -2196,7 +2196,7 @@ body.is-fix .globalNavSP__bg {
   background-repeat: no-repeat;
   background-position: center center;
   background-color: #111;
-  background-image: url("../images/mv--01.jpg");
+  background-image: url("../images/mv--sp.jpg");
   filter: grayscale(50%);
 }
 
@@ -2250,6 +2250,14 @@ body.is-fix .globalNavSP__bg {
 }
 
 @media (min-width: 56.25em) {
+  .h-mvWrap {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-color: #111;
+    background-image: url("../images/mv--pc.jpg");
+  }
+
   .mvBody {
     height: 500px;
   }
