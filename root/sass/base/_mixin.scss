@@ -31,6 +31,11 @@ FLEX
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
 }
+@mixin --fxnowrap{
+    -webkit-flex-wrap: nowrap;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+}
 
 /*  flex-direction:
 -------------------------------------------------- */

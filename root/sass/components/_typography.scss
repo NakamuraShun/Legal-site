@@ -1,6 +1,34 @@
 /*
 _typography.scss
 *******************************************************************************************************************/
+
+/* -----------------------------------------------
+/* Paragraph  [prg-***]
+-------------------------------------------------- */
+[class*="prg-"] {margin-bottom: 15px;}
+.prg-xl {font-size: 2.0rem;line-height: 2.0; font-weight: 500;}
+.prg-l {font-size: 1.6rem;line-height: 1.8;}
+.prg-m {font-size: 1.4rem;line-height: 1.8;}
+.prg-s {font-size: 1.3rem;line-height: 1.8;}
+.prg-xs {font-size: 1.1rem;line-height: 1.5;}
+
+[class*="prg-"] .richtext p a {
+    text-decoration: underline;
+}
+
+@media (min-width: $bp-md) {
+    [class*="prg-"] {margin-bottom: 20px;}
+    .prg-xl {font-size: 2.5rem; line-height: 2.0;}
+    .prg-l  {font-size: 1.8rem; line-height: 1.8;}
+    .prg-m  {font-size: 1.5rem; line-height: 1.8;}
+    .prg-s  {font-size: 1.3rem; line-height: 1.8;}
+    .prg-xs {font-size: 1.1rem; line-height: 1.5;}
+}
+
+@media (max-width: $bp-md) {
+    [class*="prg-"] .richtext p br {display: none;}
+}
+
 /* -----------------------------------------------
 /* Title    [ttl-***]
 -------------------------------------------------- */

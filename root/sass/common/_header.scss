@@ -39,6 +39,7 @@ _header.scss
     position: absolute;
     top: 9px;
     left: 10px;
+    width: 163px;
     
     &__lnk{
         width: 100%;
@@ -250,10 +251,17 @@ body.is-fix {
 }
 
 .gNavSpMain{
+    @include fxrow;
+    @include --fxwrap;
+    
     &__itm {
         position: relative;
-        border-top: 1px solid $color-t3;
-        &:last-child{border-bottom: 1px solid $color-t3;}
+        width: 50%;
+        border-bottom: 1px solid $color-t3;
+        
+        &:nth-child(odd){
+            border-right: 1px solid $color-t3;
+        }
     }
     
     &__lnk{

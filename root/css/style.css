@@ -1576,6 +1576,7 @@ _header.scss
   position: absolute;
   top: 9px;
   left: 10px;
+  width: 163px;
 }
 .logoSP__lnk {
   width: 100%;
@@ -1847,12 +1848,27 @@ body.is-fix .globalNavSP__bg {
   background-color: #221739;
 }
 
+.gNavSpMain {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
 .gNavSpMain__itm {
   position: relative;
-  border-top: 1px solid #f6f6f7;
-}
-.gNavSpMain__itm:last-child {
+  width: 50%;
   border-bottom: 1px solid #f6f6f7;
+}
+.gNavSpMain__itm:nth-child(odd) {
+  border-right: 1px solid #f6f6f7;
 }
 .gNavSpMain__lnk {
   display: -webkit-box;
@@ -2359,7 +2375,7 @@ _footer.scss
   padding: 0 !important;
   color: #fff;
   font-size: 1rem;
-  background-color: #333;
+  background-color: #221739;
 }
 .copyWrap .copyBody {
   padding: 10px 0;
@@ -2434,6 +2450,78 @@ _footer.scss
 /*
 _typography.scss
 *******************************************************************************************************************/
+/* -----------------------------------------------
+/* Paragraph  [prg-***]
+-------------------------------------------------- */
+[class*=prg-] {
+  margin-bottom: 15px;
+}
+
+.prg-xl {
+  font-size: 2rem;
+  line-height: 2;
+  font-weight: 500;
+}
+
+.prg-l {
+  font-size: 1.6rem;
+  line-height: 1.8;
+}
+
+.prg-m {
+  font-size: 1.4rem;
+  line-height: 1.8;
+}
+
+.prg-s {
+  font-size: 1.3rem;
+  line-height: 1.8;
+}
+
+.prg-xs {
+  font-size: 1.1rem;
+  line-height: 1.5;
+}
+
+[class*=prg-] .richtext p a {
+  text-decoration: underline;
+}
+
+@media (min-width: 56.25em) {
+  [class*=prg-] {
+    margin-bottom: 20px;
+  }
+
+  .prg-xl {
+    font-size: 2.5rem;
+    line-height: 2;
+  }
+
+  .prg-l {
+    font-size: 1.8rem;
+    line-height: 1.8;
+  }
+
+  .prg-m {
+    font-size: 1.5rem;
+    line-height: 1.8;
+  }
+
+  .prg-s {
+    font-size: 1.3rem;
+    line-height: 1.8;
+  }
+
+  .prg-xs {
+    font-size: 1.1rem;
+    line-height: 1.5;
+  }
+}
+@media (max-width: 56.25em) {
+  [class*=prg-] .richtext p br {
+    display: none;
+  }
+}
 /* -----------------------------------------------
 /* Title    [ttl-***]
 -------------------------------------------------- */
@@ -2930,6 +3018,7 @@ _page.scss
 }
 .news__date {
   display: inline-block;
+  width: 100%;
   margin-right: 10px;
   padding: 5px 0;
   font-weight: 500;
@@ -2946,10 +3035,14 @@ _page.scss
   }
 
   .news__content {
+    -webkit-flex-wrap: nowrap;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
     margin-bottom: 5px;
   }
   .news__date {
     margin-right: 20px;
+    width: auto;
   }
   .news__txt {
     padding: 5px 0;

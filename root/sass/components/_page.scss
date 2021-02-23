@@ -78,6 +78,7 @@ _page.scss
     
     &__date {
         display: inline-block;
+        width: 100%;
         margin-right: 10px;
         padding: 5px 0;
         font-weight: 500;        
@@ -99,11 +100,13 @@ _page.scss
     }
     .news{
         &__content {
+            @include --fxnowrap;
             margin-bottom: 5px;
         }
         
         &__date {
             margin-right: 20px;
+            width: auto;
         }
         
         &__txt {
