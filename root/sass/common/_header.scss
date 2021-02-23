@@ -126,13 +126,14 @@ _header.scss
     height: 20px;
     position: relative;
     
+    &__middle,
     &__top,
     &__bottom {
         display: inline-block;
         position: absolute;
         top: 50%;
         left: 50%;
-        transform: translateX(-50%);
+        margin-left: -12px;
         width: 24px;
         height: 1px;
         background-color: #fff;
@@ -140,13 +141,19 @@ _header.scss
     }
 }
 
-.markMenu__top{margin-top: -7px;}
+.markMenu__top{margin-top: -9px;}
+.markMenu__middle{margin-top: -2px;}
 .markMenu__bottom{margin-top: 5px;}
 
 .mark.is-active {
     .markMenu__top {
         -webkit-transform: rotate(45deg) translate(5px, 5px);
         transform: rotate(45deg) translate(5px, 5px);
+    }
+    .markMenu__middle {
+        -webkit-transition: opacity .25s;
+        transition: opacity .25s;
+        opacity: 0;
     }
     .markMenu__bottom {
         -webkit-transform: rotate(-45deg) translate(5px, -5px);
