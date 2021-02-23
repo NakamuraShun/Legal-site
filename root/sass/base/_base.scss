@@ -95,6 +95,16 @@ li img, li a, li a img {
     vertical-align: bottom;
 }
 
+/*  fadeIn
+-------------------------------------------------- */
+.fadeIn {
+    transition: 1s;
+    opacity: 0;
+}
+
+.fadeIn.animated {
+    opacity: 1;
+}
 
 
 
