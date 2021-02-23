@@ -79,7 +79,7 @@ _layout.scss
 -------------------------------------------------- */
 #h-ABOUT .h-aboutWrap{
     
-    .ttl-lvl2::after{content: "日本橋法律事務所"}
+    .ttl-lvl2::after{content: "佐賀法律事務所"}
 }
 
 
@@ -108,20 +108,71 @@ _layout.scss
 
 /* bg-wrap
 -------------------------------------------------- */
-.bgLine{
+.bgLine--rightUp{
     position: relative;
     
     &::after{
+        z-index: -1;
+        content: "";
+        width: 80px;
+        height: 150%;
+        background-color: $color-t3;
+        position: absolute;
+        top:50%;
+        left:50%;
+        transform: translate(-50%,-50%) rotate(15deg);
     }
 }
 
 @media (min-width: $bp-sm){
-    .bgLine{
-        position: relative;
-
+    .bgLine--rightUp{
         &::after{
-           
+            width: 100px;
+            transform: translate(-50%,-50%) rotate(25deg);
         }
     }
 }
 
+@media (min-width: $bp-lg){
+    .bgLine--rightUp{
+        &::after{
+            width: 180px;
+            transform: translate(-50%,-50%) rotate(40deg);
+        }
+    }
+}
+
+
+.bgLine--leftUp{
+    position: relative;
+    
+    &::after{
+        z-index: -1;
+        content: "";
+        width: 80px;
+        height: 150%;
+        background-color: $color-t3;
+        position: absolute;
+        top:50%;
+        left:50%;
+        transform: translate(-50%,-50%) rotate(-15deg);
+    }
+}
+
+@media (min-width: $bp-sm){
+    .bgLine--leftUp{
+        &::after{
+            width: 100px;
+            transform: translate(-50%,-50%) rotate(-25deg);
+        }
+    }
+}
+
+@media (min-width: $bp-lg){
+    .bgLine--leftUp{
+        &::after{
+            width: 180px;
+            transform: translate(-50%,-50%) rotate(-40deg);
+        }
+    }
+}

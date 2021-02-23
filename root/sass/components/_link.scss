@@ -7,11 +7,7 @@ _link.scss
 
 /* .lnk-txt--**
 -------------------------------------------------- */
-.lnk-txt--thema,
-.lnk-txt--subNav,
-.lnk-txt--mainNav,
-.lnk-txt--megaNav,
-.lnk-txt--footer {
+.lnk-txt--thema {
     display: inline-block;
     margin-top: 50px;
     color: inherit;
@@ -37,24 +33,6 @@ _link.scss
     }
 }
 
-/* Nav */
-.lnk-txt--subNav{
-    color: $color-b1;
-}
-
-.lnk-txt--mainNav{
-    color: $color-b1;
-    
-    &:hover{
-        border-bottom: 3px solid currentColor;
-    }
-}
-
-.lnk-txt--megaNav{
-    color: #fff !important;
-    span{color: $color-t1 !important;}
-}
-
 /* thema */
 .lnk-txt--thema{
     color: $color-t1 !important;
@@ -77,8 +55,6 @@ _link.scss
 /*  btn-type
 -------------------------------------------------- */
 
-.btnPrim--header,
-.btnPrim--headerSP,
 .btnPrim--thema,
 .btnPrim--white {
     @include infxrow-ac-jc;

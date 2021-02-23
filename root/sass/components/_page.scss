@@ -123,7 +123,7 @@ _page.scss
     padding: 10px 0;
     
     &__ttl{
-        background-color: $color-t3;
+        border-bottom: 1px solid $color-t1; 
     }
 }
 
@@ -131,6 +131,7 @@ _page.scss
     .accessMethod-wrap{
         @include fxrow-ac-jc;
     }
+    
     .accessMethod-container{
         width: 100%;
     }
@@ -143,6 +144,7 @@ _page.scss
         
         &__ttl{
             width: 100px;
+            border-bottom:none;
             background-color: #fff;
             
         }

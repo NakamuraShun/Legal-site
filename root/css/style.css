@@ -344,7 +344,6 @@ _base.scss
 -------------------------------------------------- */
 /* base */
 /* thema */
-/* sub */
 /*  BlakePoint
 // -------------------------------------------------- */
 /*  html
@@ -1458,7 +1457,7 @@ _layout.scss
 /* #h-ABOUT
 -------------------------------------------------- */
 #h-ABOUT .h-aboutWrap .ttl-lvl2::after {
-  content: "日本橋法律事務所";
+  content: "佐賀法律事務所";
 }
 
 /* #h-INFORMATION
@@ -1485,12 +1484,58 @@ _layout.scss
 
 /* bg-wrap
 -------------------------------------------------- */
-.bgLine {
+.bgLine--rightUp {
   position: relative;
 }
+.bgLine--rightUp::after {
+  z-index: -1;
+  content: "";
+  width: 80px;
+  height: 150%;
+  background-color: #f6f6f7;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(15deg);
+}
+
 @media (min-width: 37.5em) {
-  .bgLine {
-    position: relative;
+  .bgLine--rightUp::after {
+    width: 100px;
+    transform: translate(-50%, -50%) rotate(25deg);
+  }
+}
+@media (min-width: 68.75em) {
+  .bgLine--rightUp::after {
+    width: 180px;
+    transform: translate(-50%, -50%) rotate(40deg);
+  }
+}
+.bgLine--leftUp {
+  position: relative;
+}
+.bgLine--leftUp::after {
+  z-index: -1;
+  content: "";
+  width: 80px;
+  height: 150%;
+  background-color: #f6f6f7;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-15deg);
+}
+
+@media (min-width: 37.5em) {
+  .bgLine--leftUp::after {
+    width: 100px;
+    transform: translate(-50%, -50%) rotate(-25deg);
+  }
+}
+@media (min-width: 68.75em) {
+  .bgLine--leftUp::after {
+    width: 180px;
+    transform: translate(-50%, -50%) rotate(-40deg);
   }
 }
 /*
@@ -2116,6 +2161,7 @@ body.is-fix .globalNavSP__bg {
   background-position: center center;
   background-color: #111;
   background-image: url("../images/mv--01.jpg");
+  filter: grayscale(50%);
 }
 
 .mvBody {
@@ -2149,11 +2195,11 @@ body.is-fix .globalNavSP__bg {
 }
 .mvBody .mvContent__copyMain {
   margin-bottom: 20px;
+  color: #221739;
   font-size: 3rem;
   font-weight: 500;
   line-height: 1.3;
   letter-spacing: 2px;
-  text-shadow: 1px 1px 2px #fff, -1px 1px 2px #fff, 1px -1px 2px #fff, -1px -1px 2px #fff;
   position: relative;
 }
 .mvBody .mvContent__copyMain::after {
@@ -2389,81 +2435,6 @@ _footer.scss
 _typography.scss
 *******************************************************************************************************************/
 /* -----------------------------------------------
-/* Paragraph  [prg-***]
--------------------------------------------------- */
-[class*=prg-] {
-  margin-bottom: 15px;
-}
-
-.prg-xl {
-  font-size: 2rem;
-  line-height: 2;
-  font-weight: 500;
-}
-
-.prg-l {
-  font-size: 1.6rem;
-  line-height: 1.8;
-}
-
-.prg-m {
-  font-size: 1.4rem;
-  line-height: 1.8;
-}
-
-.prg-s {
-  font-size: 1.3rem;
-  line-height: 1.8;
-}
-
-.prg-xs {
-  font-size: 1.1rem;
-  line-height: 1.5;
-}
-
-[class*=prg-] .richtext p a {
-  text-decoration: underline;
-}
-
-@media (min-width: 56.25em) {
-  [class*=prg-] {
-    margin-bottom: 20px;
-  }
-
-  .prg-xl {
-    font-size: 2.5rem;
-    line-height: 2;
-  }
-
-  .prg-l {
-    font-size: 1.8rem;
-    line-height: 1.8;
-  }
-
-  .prg-m {
-    font-size: 1.5rem;
-    line-height: 1.8;
-  }
-
-  .prg-s {
-    font-size: 1.3rem;
-    line-height: 1.8;
-  }
-
-  .prg-xs {
-    font-size: 1.1rem;
-    line-height: 1.5;
-  }
-}
-@media (max-width: 56.25em) {
-  [class*=prg-] .richtext p br {
-    display: none;
-  }
-}
-/* -----------------------------------------------
-/* decoration
--------------------------------------------------- */
-/* -----------------------------------------------
 /* Title    [ttl-***]
 -------------------------------------------------- */
 /* ttl-lvl2
@@ -2531,11 +2502,7 @@ _link.scss
 -------------------------------------------------- */
 /* .lnk-txt--**
 -------------------------------------------------- */
-.lnk-txt--thema,
-.lnk-txt--subNav,
-.lnk-txt--mainNav,
-.lnk-txt--megaNav,
-.lnk-txt--footer {
+.lnk-txt--thema {
   display: inline-block;
   margin-top: 50px;
   color: inherit;
@@ -2543,11 +2510,7 @@ _link.scss
   transition: all 0.2s;
   text-transform: capitalize;
 }
-.lnk-txt--thema::after,
-.lnk-txt--subNav::after,
-.lnk-txt--mainNav::after,
-.lnk-txt--megaNav::after,
-.lnk-txt--footer::after {
+.lnk-txt--thema::after {
   content: "";
   display: block;
   top: 0;
@@ -2559,32 +2522,9 @@ _link.scss
   -webkit-transition: all 0.15s;
   transition: all 0.15s;
 }
-.lnk-txt--thema:hover,
-.lnk-txt--subNav:hover,
-.lnk-txt--mainNav:hover,
-.lnk-txt--megaNav:hover,
-.lnk-txt--footer:hover {
+.lnk-txt--thema:hover {
   color: #fff !important;
   background-color: #221739;
-}
-
-/* Nav */
-.lnk-txt--subNav {
-  color: #333;
-}
-
-.lnk-txt--mainNav {
-  color: #333;
-}
-.lnk-txt--mainNav:hover {
-  border-bottom: 3px solid currentColor;
-}
-
-.lnk-txt--megaNav {
-  color: #fff !important;
-}
-.lnk-txt--megaNav span {
-  color: #221739 !important;
 }
 
 /* thema */
@@ -2618,8 +2558,6 @@ _link.scss
 
 /*  btn-type
 -------------------------------------------------- */
-.btnPrim--header,
-.btnPrim--headerSP,
 .btnPrim--thema,
 .btnPrim--white {
   display: -webkit-box;
@@ -2841,6 +2779,23 @@ _card.scss
     height: 400px;
   }
 
+  .crd-about--office__photo,
+.crd-about--member__photo,
+.crd-about--business__photo {
+    filter: grayscale(50%);
+  }
+  .crd-about--office:hover .crd-about--office__photo,
+.crd-about--office:hover .crd-about--member__photo,
+.crd-about--office:hover .crd-about--business__photo,
+.crd-about--member:hover .crd-about--office__photo,
+.crd-about--member:hover .crd-about--member__photo,
+.crd-about--member:hover .crd-about--business__photo,
+.crd-about--business:hover .crd-about--office__photo,
+.crd-about--business:hover .crd-about--member__photo,
+.crd-about--business:hover .crd-about--business__photo {
+    filter: grayscale(0%);
+  }
+
   .crd-about--office {
     position: absolute;
     top: 0;
@@ -3009,7 +2964,7 @@ _page.scss
   padding: 10px 0;
 }
 .accessMethod__ttl {
-  background-color: #f6f6f7;
+  border-bottom: 1px solid #221739;
 }
 
 @media (min-width: 56.25em) {
@@ -3052,6 +3007,7 @@ _page.scss
   }
   .accessMethod__ttl {
     width: 100px;
+    border-bottom: none;
     background-color: #fff;
   }
 }

@@ -59,12 +59,24 @@ _card.scss
     }
 }
 
-
 @media (min-width: $bp-sm) { 
     
     .aboutBnr{
         position: relative;
         height: 400px;
+    }
+    
+    .crd-about--office,
+    .crd-about--member,
+    .crd-about--business {
+        
+        &__photo{
+            filter: grayscale(50%);
+        }
+        
+        &:hover &__photo{
+            filter: grayscale(0%);
+        }
     }
     
     .crd-about--office{
