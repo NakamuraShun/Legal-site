@@ -445,6 +445,7 @@ body.is-fix {
         &__copyMain{
             margin-bottom: 20px;
             color: $color-t1;
+            text-shadow: 0 0 10px #fff,0 0 15px #fff;
             font-size: 3rem;
             font-weight: 500;
             line-height: 1.3;
@@ -461,6 +462,10 @@ body.is-fix {
                 left: 50%;
                 transform: translateX(-50%);
             }
+        }
+        
+        &__copySub{
+            text-shadow: 0 0 10px #fff,0 0 15px #fff;
         }
     }
 }
