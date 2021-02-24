@@ -37,9 +37,10 @@ _header.scss
 -------------------------------------------------- */
 .logoSP {
     position: absolute;
-    top: 9px;
+    top: 7px;
     left: 10px;
-    width: 163px;
+    width: 170px;
+    height: 35px;
     
     &__lnk{
         width: 100%;
@@ -50,12 +51,24 @@ _header.scss
     &__img{
         height: 30px;
         width: auto;
-        margin-right: 5px;
+        margin-right: 8px;
     }
     
     &__txt{
-        font-size: 1.7rem;
+        height: 100%;
         color: $color-t1;
+        @include fxcol-jc;
+        
+        &--main{
+            font-size: 1.7rem;
+        }
+        
+        &--sub{
+            margin-top: -6px;
+            font-size: 1rem;
+            text-transform: uppercase;
+            @include fxrow-ac-jsb;
+        }
     }
     
     &:hover{
@@ -84,11 +97,24 @@ _header.scss
         &__img{
             height: 30px;
             width: auto;
+            margin-right: 8px;
         }
         
         &__txt{
-            font-size: 1.7rem;
+            height: 100%;
             color: $color-t1;
+            @include fxcol-jc;
+            
+            &--main{
+                font-size: 1.7rem;
+            }
+            
+            &--sub{
+                margin-top: -6px;
+                font-size: 1rem;
+                text-transform: uppercase;
+                @include fxrow-ac-jsb;
+            }
         }
         
         &:hover{

@@ -1585,9 +1585,10 @@ _header.scss
 -------------------------------------------------- */
 .logoSP {
   position: absolute;
-  top: 9px;
+  top: 7px;
   left: 10px;
-  width: 163px;
+  width: 170px;
+  height: 35px;
 }
 .logoSP__lnk {
   width: 100%;
@@ -1613,11 +1614,49 @@ _header.scss
 .logoSP__img {
   height: 30px;
   width: auto;
-  margin-right: 5px;
+  margin-right: 8px;
 }
 .logoSP__txt {
-  font-size: 1.7rem;
+  height: 100%;
   color: #221739;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+.logoSP__txt--main {
+  font-size: 1.7rem;
+}
+.logoSP__txt--sub {
+  margin-top: -6px;
+  font-size: 1rem;
+  text-transform: uppercase;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
 }
 .logoSP:hover {
   opacity: 0.9;
@@ -1675,10 +1714,49 @@ _header.scss
   .logoPC__img {
     height: 30px;
     width: auto;
+    margin-right: 8px;
   }
   .logoPC__txt {
-    font-size: 1.7rem;
+    height: 100%;
     color: #221739;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+  }
+  .logoPC__txt--main {
+    font-size: 1.7rem;
+  }
+  .logoPC__txt--sub {
+    margin-top: -6px;
+    font-size: 1rem;
+    text-transform: uppercase;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
   }
   .logoPC:hover {
     opacity: 0.9;
